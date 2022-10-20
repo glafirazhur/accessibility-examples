@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Scroll navigation example</title>
@@ -47,7 +47,7 @@
     <a href="#section3">Link to section 3</a>
 </nav>
 
-<nav class="nav">
+<nav class="nav nav-buttons">
     <button class="to-section" data-section="#section1">Go To section 1</button>
     <button class="to-section" data-section="#section2">Go To section 2</button>
     <button class="to-section" data-section="#section3">Go To section 3</button>
@@ -69,14 +69,16 @@
 </main>
 
 <script>
-    const buttons = document.querySelectorAll('.to-section');
+    const buttonsNav = document.querySelector('.nav-buttons');
 
-    buttons.forEach((menuitem)=> {
-        menuitem.addEventListener('click', (e) => {
-            const section = document.querySelector(e.currentTarget.dataset.section);
-            section.scrollIntoView({block: "start", behavior: "smooth"});
-        });
-    });
+    buttonsNav.addEventListener('click', ({target}) => {
+        const clickedButton = target && target.closest(".to-section");
+        if (!clickedButton) {
+            return;
+        }
+        const section = document.querySelector(clickedButton.dataset.section);
+        section.scrollIntoView({block: "start", behavior: "smooth"});
+    })
 </script>
 
 </body>
