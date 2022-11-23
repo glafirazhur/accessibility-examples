@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Alerts</title>
+</head>
+<body>
+
+<h1>Тестируем алерты</h1>
+<h2>Алерт всегда озвучивается (добавляем и удаляем ноду из DOM)</h2>
+<button type="button" class="call-new-alert">
+    Вызывает алерт, создавая в коде элемент
+</button>
+<button type="button" class="remove-new-alert">
+    Удаляет алерт, удаляя элемент из кода
+</button>
+<div class="new-alert-wrapper"></div>
+
+<h2>Алерт всегда работает, добавляем role=alert и текст</h2>
+<button type="button" class="call-no-alert">
+    Вызывает алерт, который уже был в коде
+</button>
+<button type="button" class="remove-no-alert">
+    Прячет обратно алерт, который уже был в коде
+</button>
+<div class="no-alert"></div>
+
+<h2>Алерт не работает (нода есть, но скрыта атрибутом hidden)</h2>
+<button type="button" class="call-old-alert">
+    Вызывает алерт, который уже был в коде
+</button>
+<button type="button" class="remove-old-alert">
+    Прячет обратно алерт, который уже был в коде
+</button>
+<div class="alert-here" role="alert" hidden>Привет, я алерт, который был скрыт атрибутом hidden</div>
+
+<h2>Алерт c display: none;</h2>
+<button type="button" class="call-hidden-alert">
+    Вызывает алерт, который уже был в коде (display: block)
+</button>
+<button type="button" class="remove-hidden-alert">
+    Прячет обратно алерт, который уже был в коде (display: none)
+</button>
+<div class="hidden-alert hide-alert" role="alert">Привет, я алерт, который был скрыт display:none;</div>
+
+
+<h2>Алерт всегда озвучивается (но не говорит, что это алерт)</h2>
+<button type="button" class="call-empty-alert">
+    Я создаю текст в алерте
+</button>
+<button type="button" class="remove-empty-alert">
+    Я меняю текст в алерт
+</button>
+<div class="empty-alert" role="alert"></div>
+
+
+<script>
+const callNewAlert = document.querySelector('.call-new-alert');
+callNewAlert.addEventListener('click', () => {
+   const alert = document.createElement('div');
+   const alertWrapper = document.querySelector('.new-alert-wrapper');
+    alert.classList.add('new-alert');
+    alert.setAttribute('role','alert');
+    alert.append('Я был создан и буду удалён!');
+    alertWrapper.appendChild(alert);
+});
+const removeNewAlert = document.querySelector('.remove-new-alert');
+removeNewAlert.addEventListener('click', () => {
+   const alert = document.querySelector('.new-alert');
+   alert.remove();
+});
+
+const callOldAlert = document.querySelector('.call-old-alert');
+callOldAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.alert-here');
+    alert.removeAttribute('hidden');
+});
+const removeOldAlert = document.querySelector('.remove-old-alert');
+removeOldAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.alert-here');
+    alert.setAttribute('hidden','true');
+});
+
+const callEmptyAlert = document.querySelector('.call-empty-alert');
+callEmptyAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.empty-alert');
+    alert.innerHTML = 'Я был пустым, но мне добавили текст';
+});
+const removeEmptyAlert = document.querySelector('.remove-empty-alert');
+removeEmptyAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.empty-alert');
+    alert.innerHTML = "Я уже тут";
+});
+
+const callNoAlert = document.querySelector('.call-no-alert');
+callNoAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.no-alert');
+    alert.setAttribute('role','alert');
+    alert.innerHTML = 'Я был пустым и без роли, но мне добавили текст и роль';
+});
+const removeNoAlert = document.querySelector('.remove-no-alert');
+removeNoAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.no-alert');
+    alert.removeAttribute('role');
+    alert.innerHTML = "";
+});
+const callHiddenAlert = document.querySelector('.call-hidden-alert');
+callHiddenAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.hidden-alert');
+    alert.classList.remove('hide-alert');
+});
+const removeHiddenAlert = document.querySelector('.remove-hidden-alert');
+removeHiddenAlert.addEventListener('click', () => {
+    const alert = document.querySelector('.hidden-alert');
+    alert.classList.add('hide-alert');
+});
+
+
+
+
+</script>
+
+<style>
+    .hide-alert {
+        display: none;
+    }
+</style>
+
+
+</body>
+</html>
