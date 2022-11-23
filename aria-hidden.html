@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>aria-hidden research</title>
+</head>
+<body>
+
+<h1></h1>
+<h2>Visible navigation</h2>
+
+<nav>
+<a href="#">Menu item 1</a>
+<a href="#">Menu item 2</a>
+</nav>
+
+<h2>Hidden navigation, no tabindex prevention</h2>
+<nav aria-hidden="true">
+<a href="#">Menu item 1</a>
+<a href="#">Menu item 2</a>
+</nav>
+
+<h2>Hidden navigation, tabindex="-1"</h2>
+<nav aria-hidden="true">
+    <a href="#" tabindex="-1">Menu item 1</a>
+    <a href="#" tabindex="-1">Menu item 2</a>
+</nav>
+
+<h2>Hidden element</h2>
+<div tabindex="0" aria-hidden="true">
+Focusable button
+</div>
+</body>
+</html>
