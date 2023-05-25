@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>aria-busy</title>
+</head>
+<body>
+
+<h1>Тестируем aria-busy</h1>
+
+<a href="#">Ссылка до элемента</a>
+<div>
+    <button type="button" class="busy-button">
+       Нажимаем, чтобы занять делом
+    </button>
+</div>
+<a href="#">Ссылка после элемента</a>
+
+<script>
+const busyButton = document.querySelector('.busy-button');
+busyButton.addEventListener('click', (e) => {
+   const busyButton = e.target;
+   busyButton.ariaBusy = true;
+   busyButton.disabled = true;
+   busyButton.innerHTML = 'Загрузка';
+});
+</script>
+
+<style>
+    .busy-button {
+        margin: 100px;
+        width: 300px;
+        height: 300px;
+    }
+</style>
+
+
+</body>
+</html>
