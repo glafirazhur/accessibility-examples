@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>А где кнопка?</title>
+</head>
+<body>
+
+
+  
+<main id="main">
+    <h1></h1>
+  
+  <button class="button-button button">Заполнить заявление</button>
+  <a class="link-button button" href="#">Заполнить заявление</a>
+  <input class="input-button button" type="button" value="Заполнить заявление">
+  <div class="div-button button">Заполнить заявление</div>
+  <div class="role-button button" role="button">Заполнить заявление</div>
+</main>
+  
+  <script>  
+    const buttons = document.querySelectorAll(".button");
+    buttons.forEach((e)=>{
+      e.addEventListener("click",()=>{
+        alert("Вы нажали на эту кнопку, и сейчас откроется форма заявления!");
+      });
+    });
+  </script>
+
+</body>
+</html>
