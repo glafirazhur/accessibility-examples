@@ -2,54 +2,58 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Алерты</title>
+    <title>role="alert"</title>
 </head>
 <body>
 
-<h1>Тестируем алерты</h1>
-<h2>Алерт всегда озвучивается (добавляем и удаляем ноду из DOM)</h2>
+<h1>Тестируем role="alert"</h1>
+
+<h2>Добавляем и удаляем элемент с role="alert" из DOM</h2>
 <button type="button" class="call-new-alert">
-    Вызывает алерт, создавая в коде элемент
+    Вызывает
 </button>
 <button type="button" class="remove-new-alert">
-    Удаляет алерт, удаляя элемент из кода
+    Прячет
 </button>
 <div class="new-alert-wrapper"></div>
 
-<h2>Алерт всегда работает, добавляем role=alert и текст</h2>
+
+<h2>К существуюшему пустому div добавляем role="alert" и вставляем текст</h2>
 <button type="button" class="call-no-alert">
-    Вызывает алерт, который уже был в коде
+    Вызывает
 </button>
 <button type="button" class="remove-no-alert">
-    Прячет обратно алерт, который уже был в коде
+    Прячет
 </button>
 <div class="no-alert"></div>
 
-<h2>Вызывает алерт, который был скрыт атрибутом hidden)</h2>
+
+<h2>Алерт был скрыт атрибутом hidden (удаляем и добавляем атрибут)</h2>
 <button type="button" class="call-old-alert">
-    Вызывает алерт, который уже был в коде
+    Вызывает
 </button>
 <button type="button" class="remove-old-alert">
-    Прячет обратно алерт, который уже был в коде
+    Прячет
 </button>
 <div class="alert-here" role="alert" hidden>Привет, я алерт, который был скрыт атрибутом hidden</div>
 
-<h2>Алерт c display: none;</h2>
+
+<h2>Алерт был скрыт с помощью CSS display: none; (удаляем и добавляем класс)</h2>
 <button type="button" class="call-hidden-alert">
-    Вызывает алерт, который уже был в коде (display: block)
+    Вызывает
 </button>
 <button type="button" class="remove-hidden-alert">
-    Прячет обратно алерт, который уже был в коде (display: none)
+    Прячет
 </button>
 <div class="hidden-alert hide-alert" role="alert">Привет, я алерт, который был скрыт display:none;</div>
 
 
-<h2>Алерт всегда озвучивается (но не говорит, что это алерт)</h2>
+<h2>На странице есть пустой блок с заранее заданной role="alert", добавляем в него текст</h2>
 <button type="button" class="call-empty-alert">
-    Я создаю текст в алерте
+    Добавляем текст
 </button>
 <button type="button" class="remove-empty-alert">
-    Я меняю текст в алерт
+    Удаляем текст
 </button>
 <div class="empty-alert" role="alert"></div>
 

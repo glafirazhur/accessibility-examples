@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessibility Tree</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 3px;
+            font-size: 18px;
+        }
+
+        input, textarea {
+            box-sizing: border-box;
+            padding: 5px;
+            font-size: 18px;
+            width: 200px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TODO: перевести на англ -->
+
+<!-- 
+    - тип элемента
+    - его имя
+    - его свойства
+    - действия с элементом
+    - отношения с другими элементами
+ -->
+
+<h1>Дерево доступности</h1>
+
+<form action="sent.html">
+    
+    <h2>Форма обратной связи</h2>
+
+    <div>
+        <label for="name">Имя и фамилия</label>
+        <input type="text" id="name" placeholder="Имя Фамилия"><button title="Подсказка по заполнению">(i)</button>
+        <span class="hidden">Ваше имя заполнено неверно</span>
+    </div>
+
+    <div>
+        <label for="email">E-mail</label>
+        <input type="text" id="email" placeholder="example@example.com">
+    </div>
+
+    <div>
+        <label for="comment">Комментарий к заказу</label>
+        <textarea id="comment" aria-describedby="comment-notes" placeholder="Здесь ваш комментарий, до 200 символов"></textarea>
+        <p id="comment-notes">Оставьте нам подробное описание своей проблемы, а мы свяжемся с вами как только - так сразу</p>
+    </div>
+
+    <button class="button-primary">Отправить</button>
+</form>
+
+<!-- TODO: FORM -->
+
+<div>Стилизованный красивый див с СВГ-текстом
+    <svg>Привет!</svg>
+</div>
+
+<section>
+    На изображении ниже можно посмотреть схему взаимодейтсвия пользователя доступности с интерфейсом.
+    <img src="./pictures/scheme.jpg">
+</section>
+
+<!-- отношения между элементами -->
+<table border="1">
+  <tbody>
+    <tr>
+      <th>Заголовок сроки</th>
+      <th>Данные</th>
+      <th>Другие данные</th>
+    </tr>
+    <tr>
+      <td>Строка 1</td>
+      <td>Text TD 2</td>
+      <td>Text TD 3</td>
+    </tr>
+    <tr hidden>
+        <td>Строка 2</td>
+        <td>Text TD 2</td>
+        <td>Text TD 3</td>
+      </tr>
+    <tr>
+      <td>Строка 3</td>
+      <td>Text TD 2</td>
+      <td>Text TD 3</td>
+    </tr>
+    <tr>
+      <td>Строка 4</td>
+      <td>Text TD 2</td>
+      <td>Text TD 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TODO: скрытые разными способами элементы -->
+
+</body>
+</html>
