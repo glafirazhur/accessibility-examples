@@ -21,11 +21,29 @@
 <div aria-live="polite" class="result-polite"></div>
 <br>
 
-<button type="button" class="update-atomic">
+<button type="button" class="update-atomic2">
     Искать (aria-atomic="true")
 </button>
+<div aria-live="polite" class="result-atomic2" aria-atomic="true">
+    Result is:
+</div>
+
+<br>
+<button type="button" class="update-atomic">
+    Искать (aria-atomic="false")
+</button>
 <div aria-live="polite" class="result-atomic" aria-atomic="false">
-    Result is: <br>
+    Result is:
+</div>
+<br><br>
+<hr>
+
+<br>
+<button type="button" class="update-atomic3">
+    Искать (неправильно добавляются элементы)
+</button>
+<div aria-live="polite" class="result-atomic3" aria-atomic="true">
+    Result is:
 </div>
 
 
@@ -48,7 +66,27 @@ const updateAtomic = document.querySelector('.update-atomic');
 updateAtomic.addEventListener('click', () => {
     const atomic = document.querySelector('.result-atomic');
     const elNumber = Math.floor(Math.random() * 10);
-    atomic.innerHTML += `${elNumber} elements was found <br>`;
+    const addedElem = document.createElement("div");
+    addedElem.classList.add(`elem-${elNumber}`);
+    addedElem.innerHTML = `${elNumber} elements was found`;
+    atomic.append(addedElem);
+});
+
+const updateAtomic2 = document.querySelector('.update-atomic2');
+updateAtomic2.addEventListener('click', () => {
+    const atomic = document.querySelector('.result-atomic2');
+    const elNumber = Math.floor(Math.random() * 10);
+    const addedElem = document.createElement("div");
+    addedElem.classList.add(`elem-${elNumber}`);
+    addedElem.innerHTML = `${elNumber} elements was found`;
+    atomic.append(addedElem);
+});
+
+const updateAtomic3 = document.querySelector('.update-atomic3');
+updateAtomic3.addEventListener('click', () => {
+    const atomic = document.querySelector('.result-atomic3');
+    const elNumber = Math.floor(Math.random() * 10);
+    atomic.innerHTML += `<div class="elem-${elNumber}">${elNumber} elements was found</div>`;
 });
 
 </script>
