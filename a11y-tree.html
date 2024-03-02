@@ -36,6 +36,7 @@
         button {
             max-width: 300px;
             height: 50px;
+            display: block;
         }
 
     </style>
@@ -83,7 +84,6 @@
 </form>
 
 <div class="background">
-
     <h2>Стилизованный красивый див с СВГ-текстом</h2>
     <br>
     <svg xmlns="http://www.w3.org/2000/svg" width="869" height="144" viewBox="0 0 869 144" fill="none">
@@ -94,15 +94,19 @@
 
 <section>
     <p>На изображении ниже можно посмотреть схему взаимодейтсвия пользователя доступности с интерфейсом.</p>
-
     <img src="./pictures/DOM-a11y-tree.png" width="300">
 </section>
+
+<section aria-label="Очень важная секция">
+    <h2>Описание котиков</h2>
+    <p>Текст описания котиков</p>
+</section>
+
 
 <!-- отношения между элементами -->
 <h3>Таблица с очень важными данными</h3>
 <table>
   <tbody>
-
     <tr>
       <td>Строка 1</td>
       <td>Text TD 2</td>
@@ -126,7 +130,29 @@
   </tbody>
 </table>
 
-<!-- TODO: скрытые разными способами элементы -->
+<h3>Список с очень важными пунктами</h3>
+<ul>
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+</ul>
+
+
+<button hidden>Меня не видно на странице и в дереве доступности тоже</button>
+<button style="display: none;">Я стопудово скрыт</button>
+<button style="visibility: hidden;">Меня не видно на странице, но я в дереве</button>
+
+<button style="opacity: 0;">Меня не видно на странице, но я в дереве</button>
+<button aria-hidden="true">Меня не видит только скринридер. Но он может меня нажать, парадокс</button>
+
+<button role="none">То ли кнопка, то ли нет</button>
+
+<h3>Список, а может быть и не список</h3>
+<p>Выглядит, как список!</p>
+<ul role="presentation">
+    <li>Пункт 1</li>
+    <li>Пункт 2</li>
+</ul>
+
 
 </body>
 </html>
