@@ -11,6 +11,7 @@
 <body>
 
 <h1>aria-hidden example</h1>
+<p>...but first <a href="https://dequeuniversity.com/mac/keyboard-access-mac" target="_blank"> enable keyboard navigation on Mac</a></p>
 <h2>Visible navigation</h2>
 
 <nav>
@@ -25,17 +26,29 @@
 </nav>
 
 <h2>Hidden navigation, tabindex="-1"</h2>
-<nav aria-hidden="true">
+<nav aria-hidden="true">            
     <a href="#" tabindex="-1">Menu item 1</a>
     <a href="#" tabindex="-1">Menu item 2</a>
 </nav>
 
+<h2>Hidden navigation, inert attr</h2>
+<nav aria-hidden="true" inert>
+    <a href="#">Menu item 1</a>
+    <a href="#">Menu item 2</a>
+</nav>
+
 <h2>Hidden element</h2>
 <div tabindex="0" aria-hidden="true">
-Focusable button
+    Focusable button
 </div>
 <button aria-hidden="true">Open modal</button>
 <input type="number" aria-hidden="true" aria-label="Insert number" value="250" style="width: 70px">
+
+<section aria-label="some ticking data" aria-hidden="true">
+    <p>Something went wrong with the data update</p>
+    <button aria-hidden="false">Reload</button>
+</section>
+
 
 </body>
 </html>
