@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Scroll navigation example</title>
+
+    <style>
+        .block {
+            height: 400px;
+            box-sizing: border-box;
+            border: 2px solid;
+            color: #fff;
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        .block a {
+            color: #fff;
+        }
+
+        .nav {
+            padding: 20px;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        .skiplink {
+            position: absolute;
+            top: -200px;
+            left: 2px;
+            transition: top 0.2s;
+            display: block;
+            padding: 5px 10px;
+            border: 2px solid #000;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .skiplink:focus {
+            top: 20px;
+        }
+
+        .section1 {
+            background-color: rebeccapurple;
+        }
+
+        .section2 {
+            background-color: brown;
+            height: 1000px;
+        }
+
+        .section3 {
+            background-color: chocolate;
+            height: 1200px;
+        }
+
+    </style>
+</head>
+<body>
+
+<a class="skiplink" href="#main">Skip to content</a>
+
+<nav class="nav">
+    <a href="#section1">Link to section 1</a>
+    <a href="#section2">Link to section 2</a>
+    <a href="#section3">Link to section 3</a>
+</nav>
+
+<nav class="nav">
+    <button class="to-section" data-section="#section1">Go To section 1</button>
+    <button class="to-section" data-section="#section2">Go To section 2</button>
+    <button class="to-section" data-section="#section3">Go To section 3</button>
+</nav>
+
+<main id="main">
+    <section id="section1" class="block section1">
+        <h2>Heading for the section 1</h2>
+        <a href="#">Focusable content inside the section</a>
+    </section>
+    <section id="section2" class="block section2" aria-labelledby="h22">
+        <h2 id="h22">Heading for the section  2</h2>
+        <a href="#">Focusable content inside the section</a>
+    </section>
+    <section id="section3" class="block section3">
+        <h2>Heading for the section  3</h2>
+        <a href="#">Focusable content inside the section</a>
+    </section>
+</main>
+
+<script>
+    const buttons = document.querySelectorAll('.to-section');
+
+    buttons.forEach((menuitem)=> {
+        menuitem.addEventListener('click', (e) => {
+            const section = document.querySelector(e.currentTarget.dataset.section);
+            section.scrollIntoView({block: "start", behavior: "smooth"});
+        });
+    });
+</script>
+
+</body>
+</html>
