@@ -1,0 +1,16 @@
+{% set activePage = page.url %}
+
+<header>
+  <nav aria-label="Primary">
+    <ul>
+      {% for item in navigation[page.lang] %}
+      <li>
+        <a href="{{ item.url }}">{{ item.text }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="https://github.com/glafirazhur/accessibility-examples">GitHub</a>
+      </li>
+    </ul>
+  </nav>
+</header>

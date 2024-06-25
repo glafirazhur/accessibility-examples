@@ -1,1 +1,6 @@
-/.idea
+/node_modules/
+/.cache/
+/.idea/
+/.DS_Store/
+/Thumbs.db/
+/dist/

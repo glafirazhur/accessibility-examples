@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: 'Arial', sans-serif;
+}
+h1 {
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+h2 {
+    margin: 5px 0;
+}
+
+form {
+    width: 500px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.form-field-wrapper {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.form-field {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.button-primary {
+    width: 100%;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.radio-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fields-wrapper {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.fields-wrapper-label {
+    flex-basis: 100%;
+    font-size: 14px;
+}
+
+.address-label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-address {
+    height: 100px;
+}
+
+.user-address-suggest {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding: 5px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: none;
+}
+
+.error {
+    display: none;
+    color: rgba(255, 0, 0);
+}
+
+.show-error {
+    display: block;
+}
+
+.field-error {
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}

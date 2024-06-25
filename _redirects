@@ -1,0 +1,4 @@
+/   /ru/        200   Language=ru
+/   /en/        200
+/*  /ru/:splat  302   Language=ru
+/*  /en/:splat  302
