@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Chips A11y</title>
+
+  <style>
+  .tag-wrapper {
+display: flex;
+flex-gap: 20px;
+  }
+
+.tag {
+display: flex;
+}
+</style>
+</head>
+<body>
+
+  <div class="label" id="tag_label">Social media</>
+  <div role="group" aria-label="Social media, 3 selected" class="tag-wrapper">
+    
+    <div class="tag" id="tag1">
+        <button aria-describedby="tag_description">semrush</button>
+        <button data-has-hint aria-label="Remove semrush tag">X</button>
+    </div>
+    <div class="tag" id="tag2">
+        <button aria-describedby="tag_description">semrush2</button>
+        <button data-hint aria-label="Remove semrush2 tag">X</button>
+    </div>
+    
+    <input type="text" class="tag-input" aria-labelledby="tag_label">
+  
+  </div>
+  
+  <div hidden id="tag_description">press Enter to edit</div>
+
+</body>
+</html>
+
