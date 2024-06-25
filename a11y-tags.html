@@ -17,19 +17,43 @@ display: flex;
 </head>
 <body>
 
-  <div class="label" id="tag_label">Social media</div>
-  <div role="group" aria-label="Social media, 3 selected" class="tag-wrapper" tabindex="0">
+    <h1>Accessible chips (tags) input</h1>
+
+    <h2>Editable tags</h2>
+  <div class="label" id="tag_label1">Social media</div>
+  <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
     
     <div class="tag" id="tag1">
-        <button aria-describedby="tag_description">semrush</button>
-        <button data-has-hint aria-label="Remove semrush tag">X</button>
+        <button aria-describedby="tag_description">vk</button>
+        <button data-has-hint aria-label="Remove vk tag"  title="Remove vk tag">X</button>
     </div>
     <div class="tag" id="tag2">
-        <button aria-describedby="tag_description">semrush2</button>
-        <button data-hint aria-label="Remove semrush2 tag">X</button>
+        <button aria-describedby="tag_description">facebook</button>
+        <button data-hint aria-label="Remove facebook tag"  title="Remove facebook tag">X</button>
     </div>
     
-    <input type="text" class="tag-input" aria-labelledby="tag_label">
+    <input type="text" class="tag-input" aria-labelledby="tag_label1">
+  
+  </div>
+    <br>
+    <br>
+    
+    <h2>Uneditable tags</h2>
+    <div class="label" id="tag_label2">Social media</div>
+   <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+    
+    <div class="tag" id="tag3">
+        <div>vk</div>
+        <button data-has-hint aria-label="Remove vk tag" title="Remove vk tag">X</button>
+    </div>
+    <div class="tag" id="tag4">
+        <div>facebook</div>
+        <button data-hint aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+    </div>
+    
+    <input type="text" class="tag-input" aria-labelledby="tag_label2">
+  
+  </div>
   
   </div>
   
