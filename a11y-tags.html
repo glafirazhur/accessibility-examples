@@ -71,6 +71,40 @@ display: flex;
         <div id="tag_instructions" hidden>Press Enter to add an item</div>
     </div>
 
+    <h2>Disabled</h2>
+    <div class="label" id="tag_label4">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected, disabled" aria-disabled="true" class="tag-wrapper" tabindex="0">
+        <ul>
+            <li class="tag" id="tag5">
+                <div>vk</div>
+                <button aria-label="Remove vk tag" title="Remove vk tag">X</button>
+            </li>
+            <li class="tag" id="tag6">
+                <div>facebook</div>
+                <button aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+            </li>
+        </ul>
+    
+        <input type="text" class="tag-input" aria-labelledby="tag_label3" aria-describedby="tag_instructions">
+        <div id="tag_instructions" hidden>Press Enter to add an item</div>
+    </div>
+
+    <h2>Disabled</h2>
+    <div class="label" id="tag_label4">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" aria-disabled="true" class="tag-wrapper" tabindex="0">
+        <ul>
+            <li class="tag" id="tag7">
+                <div>vk</div>
+            </li>
+            <li class="tag" id="tag8">
+                <div>facebook</div>
+            </li>
+        </ul>
+    
+        <input type="text" disabled class="tag-input" aria-labelledby="tag_label4">
+    </div>
+
+
     <div hidden id="tag_description">press Enter to edit</div>
 </body>
 </html>
