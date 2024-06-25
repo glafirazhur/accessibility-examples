@@ -13,52 +13,73 @@ gap: 20px;
 .tag {
 display: flex;
 }
+      ul {list-style: none;}
 </style>
 </head>
 <body>
+    
 
     <h1>Accessible chips (tags) input</h1>
-
+    
     <h2>Editable tags</h2>
-  <div class="label" id="tag_label1">Social media</div>
-  <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+    <div class="label" id="tag_label1">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
     
-    <div class="tag" id="tag1">
-        <button aria-describedby="tag_description">vk</button>
-        <button data-has-hint aria-label="Remove vk tag"  title="Remove vk tag">X</button>
+        <div class="tag" id="tag1">
+            <button aria-describedby="tag_description">vk</button>
+            <button data-has-hint aria-label="Remove vk tag"  title="Remove vk tag">X</button>
+        </div>
+        <div class="tag" id="tag2">
+            <button aria-describedby="tag_description">facebook</button>
+            <button data-hint aria-label="Remove facebook tag"  title="Remove facebook tag">X</button>
+        </div>
+        
+        <input type="text" class="tag-input" aria-labelledby="tag_label1">
+        
     </div>
-    <div class="tag" id="tag2">
-        <button aria-describedby="tag_description">facebook</button>
-        <button data-hint aria-label="Remove facebook tag"  title="Remove facebook tag">X</button>
-    </div>
-    
-    <input type="text" class="tag-input" aria-labelledby="tag_label1">
-  
-  </div>
     <br>
     <br>
     
+    
+        
     <h2>Uneditable tags</h2>
     <div class="label" id="tag_label2">Social media</div>
-   <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
-    
-    <div class="tag" id="tag3">
-        <div>vk</div>
-        <button data-has-hint aria-label="Remove vk tag" title="Remove vk tag">X</button>
+    <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+        
+        <div class="tag" id="tag3">
+            <div>vk</div>
+            <button data-has-hint aria-label="Remove vk tag" title="Remove vk tag">X</button>
+        </div>
+        <div class="tag" id="tag4">
+            <div>facebook</div>
+            <button data-hint aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+        </div>
+        
+        <input type="text" class="tag-input" aria-labelledby="tag_label2">
+      
     </div>
-    <div class="tag" id="tag4">
-        <div>facebook</div>
-        <button data-hint aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
-    </div>
-    
-    <input type="text" class="tag-input" aria-labelledby="tag_label2">
-  
-  </div>
-  
-  </div>
-  
-  <div hidden id="tag_description">press Enter to edit</div>
 
+
+    <h2>List of tags, input instructions (don't add for the comboboxes!)</h2>
+    <div class="label" id="tag_label3">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+        <ul>
+            <li class="tag" id="tag5">
+                <div>vk</div>
+                <button data-has-hint aria-label="Remove vk tag" title="Remove vk tag">X</button>
+            </li>
+            <li class="tag" id="tag6">
+                <div>facebook</div>
+                <button data-hint aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+            </li>
+        </ul>
+    
+        <input type="text" class="tag-input" aria-labelledby="tag_label3" aria-describedby="tag_instructions">
+        <div id="tag_instructions" hidden>Press Enter to add an item</div>
+    </div>
+
+  
+    <div hidden id="tag_description">press Enter to edit</div>
 </body>
 </html>
 
