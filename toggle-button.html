@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>toggle button</title>
+</head>
+<body>
+
+   
+
+<h1>Кнопка с двумя состояниями</h1>
+
+<button class="time-button">AM</button>
+
+
+<button class="show-button">Show</button>
+
+
+<script>
+
+    const timeButton = document.querySelector(".time-button");
+    const showButton = document.querySelector(".show-button");
+
+    timeButton.addEventListener("click", (e) => {
+        let buttonText = e.target.innerHTML;
+        e.target.innerHTML = buttonText === "AM" ? "PM" : "AM";    
+    });
+
+    showButton.addEventListener("click", (e) => {
+        let buttonText = e.target.innerHTML;
+        e.target.innerHTML = buttonText === "Show" ? "Hide" : "Show";    
+    });
+
+</script>
+
+</body>
+</html>
