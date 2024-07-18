@@ -6,29 +6,34 @@
 </head>
 <body>
 
-   
-
 <h1>Кнопка с двумя состояниями</h1>
-
-<button class="time-button">AM</button>
-
-
+<button class="time-button" aria-pressed="false">AM</button>
+<button class="yes-button" role="switch" aria-checked="false">Yes</button>
 <button class="show-button">Show</button>
-
 
 <script>
 
     const timeButton = document.querySelector(".time-button");
     const showButton = document.querySelector(".show-button");
+    const yesButton = document.querySelector(".yes-button");
 
     timeButton.addEventListener("click", (e) => {
         let buttonText = e.target.innerHTML;
-        e.target.innerHTML = buttonText === "AM" ? "PM" : "AM";    
+        let attrValue = e.target.getAttribute("aria-pressed") === "true" ? "false" : "true";
+        e.target.innerHTML = buttonText === "AM" ? "PM" : "AM";
+        e.target.setAttribute('aria-pressed', attrValue);
     });
 
     showButton.addEventListener("click", (e) => {
         let buttonText = e.target.innerHTML;
         e.target.innerHTML = buttonText === "Show" ? "Hide" : "Show";    
+    });
+
+    yesButton.addEventListener("click", (e) => {
+        let buttonText = e.target.innerHTML;
+        let attrValue = e.target.getAttribute("aria-checked") === "true" ? "false" : "true";
+        e.target.innerHTML = buttonText === "Yes" ? "No" : "Yes";
+        e.target.setAttribute('aria-checked', attrValue);
     });
 
 </script>
