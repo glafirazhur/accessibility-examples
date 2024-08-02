@@ -50,12 +50,12 @@
 <h1>Onboarding / new feature pattern</h1>
 
 <div class="feature-wrapper">
-    <button aria-describedby="hasNewFeatureMessageID">Download report</button>
+    <button aria-describedby="hasNewFeatureMessageID" aria-expanded="true" aria-controls="featurePopupID">Download report</button>
     <span class="dot">
         <span hidden id="hasNewFeatureMessageID">This is a new feature!</span>
     </span>
 </div>
-<div class="modal" aria-label="New feature!" role="dialog">
+<div class="modal" aria-label="New feature!" role="dialog" id="featurePopupID">
     <button class="close-button" aria-label="close">x</button>
     <h2>New feature!</h2>
     <p>With this new feature, users can now enjoy improved user experience, or expanded capabilities.</p>
