@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date picker combobox example</title>
+    <style>
+        .close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .modal {
+            position: relative;
+            padding: 10px;
+            border: 1px solid;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>Date / Date range combobox pattern</h1>
+    <section>
+        <h2>Single date</h2>
+        <div class="datepicker-trigger"> 
+            <label for="singleDateFiedlID">Single date picker</label>
+            <input type="text" placeholder="DD/MM/YYYY" id="singleDateFiedlID" aria-describedby="fieldDescription1ID" role="combobox" aria-haspopup="dialog" aria-expanded="true" aria-controls="comboboxPopup1ID">
+            <span hidden id="fieldDescription1ID">Date format is DD/MM/YYYY</span>
+        </div>
+        <div class="modal" aria-label="Date picker" role="dialog" id="comboboxPopup1ID">
+            <button class="close-button" aria-label="close">x</button>
+            <p>Select dates</p>
+            <button>Apply</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Date range</h2>
+        <div class="comomox-wrapper">
+            
+            <div role="group" aria-labelledby="groupLabelID">
+                <span id="groupLabelID" aria-hidden="true">Date range picker</span>
+            
+                <input type="text" placeholder="DD/MM/YYYY" aria-label="From" aria-describedby="fieldDescription2ID" role="combobox" aria-haspopup="dialog" aria-expanded="true" aria-controls="comboboxPopup2ID">
+                <input type="text" placeholder="DD/MM/YYYY" aria-label="To" aria-describedby="fieldDescription2ID" role="combobox" aria-expanded="false" aria-haspopup="dialog">
+
+                <span hidden id="fieldDescription2ID">Date format is DD/MM/YYYY</span>
+            
+            </div>
+        </div>
+        <div class="modal" aria-label="Date picker" role="dialog" id="comboboxPopup2ID">
+            <button class="close-button" aria-label="close">x</button>
+            <p>Select dates</p>
+            <button>Apply</button>
+        </div>
+    </section>
+</main>
+</body>
+</html>
