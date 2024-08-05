@@ -17,6 +17,70 @@
             margin: 20px;
         }
 
+        body {
+    margin: 20px;
+}
+
+.calendar-container {
+    display: flex;
+    gap: 20px;
+}
+
+.calendar {
+    border-collapse: collapse;
+    display: inline-block;
+    width: 300px;
+}
+
+.caption {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+[role="row"] {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+[role="gridcell"] {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.calendar button {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.calendar button:focus {
+    outline: 2px solid #007BFF;
+    background-color: #e7f1ff;
+}
+
     </style>
 </head>
 <body>
@@ -32,7 +96,134 @@
         </div>
         <div class="modal" aria-label="Date picker" role="dialog" id="comboboxPopup1ID">
             <button class="close-button" aria-label="close">x</button>
-            <p>Select dates</p>
+            <h3>div[role="grid"] semantics</h3>
+            
+            <div class="calendar-container">
+
+                <div id="gridLabel1ID">July</div>
+                <div class="calendar" aria-labelledby="gridLabel1ID" role="grid">
+                    <div class="grid-header" role="row">
+                        <div role="columnheader">Sun</div>
+                        <div role="columnheader">Mon</div>
+                        <div role="columnheader">Tue</div>
+                        <div role="columnheader">Wed</div>
+                        <div role="columnheader">Thu</div>
+                        <div role="columnheader">Fri</div>
+                        <div role="columnheader">Sat</div>
+                    </div>
+                    <div class="grid-body">
+                        <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
+                        <div role="row">
+                            <div role="gridcell"></div>
+                            <div role="gridcell"><button tabindex="0">1</button></div>
+                            <div role="gridcell"><button tabindex="-1">2</button></div>
+                            <div role="gridcell"><button tabindex="-1">3</button></div>
+                            <div role="gridcell"><button tabindex="-1">4</button></div>
+                            <div role="gridcell"><button tabindex="-1">5</button></div>
+                            <div role="gridcell"><button tabindex="-1">6</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">7</button></div>
+                            <div role="gridcell"><button tabindex="-1">8</button></div>
+                            <div role="gridcell"><button tabindex="-1">9</button></div>
+                            <div role="gridcell"><button tabindex="-1">10</button></div>
+                            <div role="gridcell"><button tabindex="-1">11</button></div>
+                            <div role="gridcell"><button tabindex="-1">12</button></div>
+                            <div role="gridcell"><button tabindex="-1">13</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">14</button></div>
+                            <div role="gridcell"><button tabindex="-1">15</button></div>
+                            <div role="gridcell"><button tabindex="-1">16</button></div>
+                            <div role="gridcell"><button tabindex="-1">17</button></div>
+                            <div role="gridcell"><button tabindex="-1">18</button></div>
+                            <div role="gridcell"><button tabindex="-1">19</button></div>
+                            <div role="gridcell"><button tabindex="-1">20</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">21</button></div>
+                            <div role="gridcell"><button tabindex="-1">22</button></div>
+                            <div role="gridcell"><button tabindex="-1">23</button></div>
+                            <div role="gridcell"><button tabindex="-1">24</button></div>
+                            <div role="gridcell"><button tabindex="-1">25</button></div>
+                            <div role="gridcell"><button tabindex="-1">26</button></div>
+                            <div role="gridcell"><button tabindex="-1">27</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">28</button></div>
+                            <div role="gridcell"><button tabindex="-1">29</button></div>
+                            <div role="gridcell"><button tabindex="-1">30</button></div>
+                            <div role="gridcell"><button tabindex="-1">31</button></div>
+                            <div role="gridcell"></div>
+                            <div role="gridcell"></div>
+                            <div role="gridcell"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="gridLabel2ID">August</div>
+                <div class="calendar" aria-labelledby="gridLabel2ID" role="grid">
+                    <div class="grid-header" role="row">
+                        <div role="columnheader">Sun</div>
+                        <div role="columnheader">Mon</div>
+                        <div role="columnheader">Tue</div>
+                        <div role="columnheader">Wed</div>
+                        <div role="columnheader">Thu</div>
+                        <div role="columnheader">Fri</div>
+                        <div role="columnheader">Sat</div>
+                    </div>
+                    <div class="grid-body">
+                        <!-- August 2024 starts on Thursday, ends on Saturday (31 days) -->
+                        <div role="row">
+                            <div role="gridcell"></div>
+                            <div role="gridcell"></div>
+                            <div role="gridcell"></div>
+                            <div role="gridcell"><button tabindex="-1">1</button></div>
+                            <div role="gridcell"><button tabindex="-1">2</button></div>
+                            <div role="gridcell"><button tabindex="-1">3</button></div>
+                            <div role="gridcell"><button tabindex="-1">4</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">5</button></div>
+                            <div role="gridcell"><button tabindex="-1">6</button></div>
+                            <div role="gridcell"><button tabindex="-1">7</button></div>
+                            <div role="gridcell"><button tabindex="-1">8</button></div>
+                            <div role="gridcell"><button tabindex="-1">9</button></div>
+                            <div role="gridcell"><button tabindex="-1">10</button></div>
+                            <div role="gridcell"><button tabindex="-1">11</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">12</button></div>
+                            <div role="gridcell"><button tabindex="-1">13</button></div>
+                            <div role="gridcell"><button tabindex="-1">14</button></div>
+                            <div role="gridcell"><button tabindex="-1">15</button></div>
+                            <div role="gridcell"><button tabindex="-1">16</button></div>
+                            <div role="gridcell"><button tabindex="-1">17</button></div>
+                            <div role="gridcell"><button tabindex="-1">18</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">19</button></div>
+                            <div role="gridcell"><button tabindex="-1">20</button></div>
+                            <div role="gridcell"><button tabindex="-1">21</button></div>
+                            <div role="gridcell"><button tabindex="-1">22</button></div>
+                            <div role="gridcell"><button tabindex="-1">23</button></div>
+                            <div role="gridcell"><button tabindex="-1">24</button></div>
+                            <div role="gridcell"><button tabindex="-1">25</button></div>
+                        </div>
+                        <div role="row">
+                            <div role="gridcell"><button tabindex="-1">26</button></div>
+                            <div role="gridcell"><button tabindex="-1">27</button></div>
+                            <div role="gridcell"><button tabindex="-1">28</button></div>
+                            <div role="gridcell"><button tabindex="-1">29</button></div>
+                            <div role="gridcell"><button tabindex="-1">30</button></div>
+                            <div role="gridcell"><button tabindex="-1">31</button></div>
+                            <div role="gridcell"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
             <button>Apply</button>
         </div>
     </section>
@@ -53,10 +244,194 @@
         </div>
         <div class="modal" aria-label="Date picker" role="dialog" id="comboboxPopup2ID">
             <button class="close-button" aria-label="close">x</button>
-            <p>Select dates</p>
+            <h3>&lt;table&gt; semantics</h3>
+            <div class="calendar-container">
+                <table class="calendar" role="grid">
+                    <caption>July</caption>
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
+                        <tr>
+                            <td></td>
+                            <td><button tabindex="0">1</button></td>
+                            <td><button tabindex="-1">2</button></td>
+                            <td><button tabindex="-1">3</button></td>
+                            <td><button tabindex="-1">4</button></td>
+                            <td><button tabindex="-1">5</button></td>
+                            <td><button tabindex="-1">6</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">7</button></td>
+                            <td><button tabindex="-1">8</button></td>
+                            <td><button tabindex="-1">9</button></td>
+                            <td><button tabindex="-1">10</button></td>
+                            <td><button tabindex="-1">11</button></td>
+                            <td><button tabindex="-1">12</button></td>
+                            <td><button tabindex="-1">13</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">14</button></td>
+                            <td><button tabindex="-1">15</button></td>
+                            <td><button tabindex="-1">16</button></td>
+                            <td><button tabindex="-1">17</button></td>
+                            <td><button tabindex="-1">18</button></td>
+                            <td><button tabindex="-1">19</button></td>
+                            <td><button tabindex="-1">20</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">21</button></td>
+                            <td><button tabindex="-1">22</button></td>
+                            <td><button tabindex="-1">23</button></td>
+                            <td><button tabindex="-1">24</button></td>
+                            <td><button tabindex="-1">25</button></td>
+                            <td><button tabindex="-1">26</button></td>
+                            <td><button tabindex="-1">27</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">28</button></td>
+                            <td><button tabindex="-1">29</button></td>
+                            <td><button tabindex="-1">30</button></td>
+                            <td><button tabindex="-1">31</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <table class="calendar" role="grid">
+                    <caption>August</caption>
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- August 2024 starts on Thursday, ends on Saturday (31 days) -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button tabindex="-1">1</button></td>
+                            <td><button tabindex="-1">2</button></td>
+                            <td><button tabindex="-1">3</button></td>
+                            <td><button tabindex="-1">4</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">5</button></td>
+                            <td><button tabindex="-1">6</button></td>
+                            <td><button tabindex="-1">7</button></td>
+                            <td><button tabindex="-1">8</button></td>
+                            <td><button tabindex="-1">9</button></td>
+                            <td><button tabindex="-1">10</button></td>
+                            <td><button tabindex="-1">11</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">12</button></td>
+                            <td><button tabindex="-1">13</button></td>
+                            <td><button tabindex="-1">14</button></td>
+                            <td><button tabindex="-1">15</button></td>
+                            <td><button tabindex="-1">16</button></td>
+                            <td><button tabindex="-1">17</button></td>
+                            <td><button tabindex="-1">18</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">19</button></td>
+                            <td><button tabindex="-1">20</button></td>
+                            <td><button tabindex="-1">21</button></td>
+                            <td><button tabindex="-1">22</button></td>
+                            <td><button tabindex="-1">23</button></td>
+                            <td><button tabindex="-1">24</button></td>
+                            <td><button tabindex="-1">25</button></td>
+                        </tr>
+                        <tr>
+                            <td><button tabindex="-1">26</button></td>
+                            <td><button tabindex="-1">27</button></td>
+                            <td><button tabindex="-1">28</button></td>
+                            <td><button tabindex="-1">29</button></td>
+                            <td><button tabindex="-1">30</button></td>
+                            <td><button tabindex="-1">31</button></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <br>
             <button>Apply</button>
         </div>
     </section>
 </main>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        
+        const calendarContainers = document.querySelectorAll('.calendar-container');
+        
+        calendarContainers.forEach( (container) => {
+            
+            const buttons = container.querySelectorAll('button');
+            let currentFocus = 0;
+            
+            // Initialize focus on the first button of the calendar
+            buttons[currentFocus].focus();
+
+            buttons.forEach((button, index) => {
+                button.addEventListener('keydown', (e) => {
+                    // Handle arrow key navigation
+                    switch (e.key) {
+                        case 'ArrowRight':
+                            if (currentFocus < buttons.length - 1) {
+                                currentFocus++;
+                            }
+                            break;
+                        case 'ArrowLeft':
+                            if (currentFocus > 0) {
+                                currentFocus--;
+                            }
+                            break;
+                        case 'ArrowDown':
+                            if (currentFocus + 7 < buttons.length) {
+                                currentFocus += 7;
+                            }
+                            break;
+                        case 'ArrowUp':
+                            if (currentFocus - 7 >= 0) {
+                                currentFocus -= 7;
+                            }
+                            break;
+                        default:
+                            return; // exit this handler for other keys
+                    }
+                    
+                    // Prevent default scroll behavior
+                    e.preventDefault();
+
+                    // Move focus to the new button
+                    buttons[currentFocus].focus();
+                });
+            });
+    });
+    });
+
+</script>
 </body>
 </html>
