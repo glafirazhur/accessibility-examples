@@ -1,95 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <title>aria-atomic</title>
+  <meta charset="UTF-8">
+  <title>aria-atomic</title>
 </head>
+
 <body>
 
-<h1>Тестируем aria-live=polite + aria-atomic</h1>
+  <h1>Тестируем aria-live=polite + aria-atomic</h1>
 
-<button type="button" class="update-status">
+  <button type="button" class="update-status">
     Искать (role="status")
-</button>
-<div role="status" class="result-status"></div>
-<br>
-<br>
+  </button>
+  <div role="status" class="result-status"></div>
+  <br>
+  <br>
 
-<button type="button" class="update-polite">
+  <button type="button" class="update-polite">
     Искать (aria-live="polite")
-</button>
-<div aria-live="polite" class="result-polite"></div>
-<br>
+  </button>
+  <div aria-live="polite" class="result-polite"></div>
+  <br>
 
-<button type="button" class="update-atomic2">
+  <button type="button" class="update-atomic2">
     Искать (aria-atomic="true")
-</button>
-<div aria-live="polite" class="result-atomic2" aria-atomic="true">
+  </button>
+  <div aria-live="polite" class="result-atomic2" aria-atomic="true">
     Result is:
-</div>
+  </div>
 
-<br>
-<button type="button" class="update-atomic">
+  <br>
+  <button type="button" class="update-atomic">
     Искать (aria-atomic="false")
-</button>
-<div aria-live="polite" class="result-atomic" aria-atomic="false">
+  </button>
+  <div aria-live="polite" class="result-atomic" aria-atomic="false">
     Result is:
-</div>
-<br><br>
-<hr>
+  </div>
+  <br><br>
+  <hr>
 
-<br>
-<button type="button" class="update-atomic3">
+  <br>
+  <button type="button" class="update-atomic3">
     Искать (неправильно добавляются элементы)
-</button>
-<div aria-live="polite" class="result-atomic3" aria-atomic="true">
+  </button>
+  <div aria-live="polite" class="result-atomic3" aria-atomic="true">
     Result is:
-</div>
+  </div>
 
+  <script>
+    const updateStatus = document.querySelector('.update-status');
+    updateStatus.addEventListener('click', () => {
+      const status = document.querySelector('.result-status');
+      const elNumber = Math.floor(Math.random() * 10);
+      status.innerHTML = `${elNumber} elements was found`;
+    });
 
-<script>
-const updateStatus = document.querySelector('.update-status');
-updateStatus.addEventListener('click', () => {
-   const status = document.querySelector('.result-status');
-   const elNumber = Math.floor(Math.random() * 10);
-   status.innerHTML = `${elNumber} elements was found`;
-});
+    const updatePolite = document.querySelector('.update-polite');
+    updatePolite.addEventListener('click', () => {
+      const polite = document.querySelector('.result-polite');
+      const elNumber = Math.floor(Math.random() * 10);
+      polite.innerHTML = `${elNumber} elements was found`;
+    });
 
-const updatePolite = document.querySelector('.update-polite');
-updatePolite.addEventListener('click', () => {
-    const polite = document.querySelector('.result-polite');
-    const elNumber = Math.floor(Math.random() * 10);
-    polite.innerHTML = `${elNumber} elements was found`;
-});
+    const updateAtomic = document.querySelector('.update-atomic');
+    updateAtomic.addEventListener('click', () => {
+      const atomic = document.querySelector('.result-atomic');
+      const elNumber = Math.floor(Math.random() * 10);
+      const addedElem = document.createElement("div");
+      addedElem.classList.add(`elem-${elNumber}`);
+      addedElem.innerHTML = `${elNumber} elements was found`;
+      atomic.append(addedElem);
+    });
 
-const updateAtomic = document.querySelector('.update-atomic');
-updateAtomic.addEventListener('click', () => {
-    const atomic = document.querySelector('.result-atomic');
-    const elNumber = Math.floor(Math.random() * 10);
-    const addedElem = document.createElement("div");
-    addedElem.classList.add(`elem-${elNumber}`);
-    addedElem.innerHTML = `${elNumber} elements was found`;
-    atomic.append(addedElem);
-});
+    const updateAtomic2 = document.querySelector('.update-atomic2');
+    updateAtomic2.addEventListener('click', () => {
+      const atomic = document.querySelector('.result-atomic2');
+      const elNumber = Math.floor(Math.random() * 10);
+      const addedElem = document.createElement("div");
+      addedElem.classList.add(`elem-${elNumber}`);
+      addedElem.innerHTML = `${elNumber} elements was found`;
+      atomic.append(addedElem);
+    });
 
-const updateAtomic2 = document.querySelector('.update-atomic2');
-updateAtomic2.addEventListener('click', () => {
-    const atomic = document.querySelector('.result-atomic2');
-    const elNumber = Math.floor(Math.random() * 10);
-    const addedElem = document.createElement("div");
-    addedElem.classList.add(`elem-${elNumber}`);
-    addedElem.innerHTML = `${elNumber} elements was found`;
-    atomic.append(addedElem);
-});
+    const updateAtomic3 = document.querySelector('.update-atomic3');
+    updateAtomic3.addEventListener('click', () => {
+      const atomic = document.querySelector('.result-atomic3');
+      const elNumber = Math.floor(Math.random() * 10);
+      atomic.innerHTML += `<div class="elem-${elNumber}">${elNumber} elements was found</div>`;
+    });
 
-const updateAtomic3 = document.querySelector('.update-atomic3');
-updateAtomic3.addEventListener('click', () => {
-    const atomic = document.querySelector('.result-atomic3');
-    const elNumber = Math.floor(Math.random() * 10);
-    atomic.innerHTML += `<div class="elem-${elNumber}">${elNumber} elements was found</div>`;
-});
-
-</script>
+  </script>
 
 </body>
+
 </html>

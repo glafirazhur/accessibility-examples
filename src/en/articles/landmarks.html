@@ -1,135 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Accessibility Tree</title>
-    <style>
-        header nav {
-            padding: 10px;
-            background-color: #eee;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 1200px;
-        }
-        main {
-            display: flex;
-            max-width: 1200px;
-            gap: 50px;
-        }
-        footer {
-            display: flex;
-            gap: 50px;
-        }
+  <meta charset="UTF-8">
+  <title>Accessibility Tree</title>
+  <style>
+    header nav {
+      padding: 10px;
+      background-color: #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 1200px;
+    }
 
-        aside {
-            margin-bottom: 50px;
-        }
-        label {
-            display: block;
-        }
-        button {
-            margin-top: 10px;
-        }
+    main {
+      display: flex;
+      max-width: 1200px;
+      gap: 50px;
+    }
 
-    </style>
+    footer {
+      display: flex;
+      gap: 50px;
+    }
+
+    aside {
+      margin-bottom: 50px;
+    }
+
+    label {
+      display: block;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
 
-<a href="#main">Skip to main</a>
+  <a href="#main">Skip to main</a>
 
-<header>
+  <header>
     <h1>Landmarks example</h1>
     <nav aria-labelledby="heading0">
-        <h2 id="heading0">Document Outline</h2>
-        <a href="#section1">Section without an accessible name</a>
-        <a href="#section2">Section with an accessible name</a>
+      <h2 id="heading0">Document Outline</h2>
+      <a href="#section1">Section without an accessible name</a>
+      <a href="#section2">Section with an accessible name</a>
     </nav>
 
     <search aria-label="search form">
-        <form action="sent.html">
-            <div>
-                <label for="email2">Search</label>
-                <input type="search" id="search" placeholder="Look for...">
-            </div>
-            <button class="button-primary">Search!</button>
-        </form>
+      <form action="sent.html">
+        <div>
+          <label for="email2">Search</label>
+          <input type="search" id="search" placeholder="Look for...">
+        </div>
+        <button class="button-primary">Search!</button>
+      </form>
     </search>
-</header>
+  </header>
 
-<main id="main">
+  <main id="main">
     <div class="content">
-    <section id="section1">
-        <h2 >This is a section without an accessible name</h2>
+      <section id="section1">
+        <h2>This is a section without an accessible name</h2>
 
-        <p>A tag section without an accessible name can be a significant barrier for individuals who rely on screen readers or other assistive technologies to access digital content. An accessible name serves as a label or description for the section, allowing users to understand its purpose and content. Without this crucial element, users may encounter confusion and difficulty navigating the webpage.</p>
-        <p>In web development, it is essential to ensure that all HTML elements have appropriate and meaningful accessible names. This includes using ARIA (Accessible Rich Internet Applications) attributes when necessary to provide additional context and descriptions for interactive elements. Failure to do so can lead to poor user experiences and make websites less inclusive and accessible to a diverse range of users. Web developers and designers should prioritize accessibility to create a more inclusive online environment for all.</p>
-    </section>
+        <p>A tag section without an accessible name can be a significant barrier for individuals who rely on screen
+          readers or other assistive technologies to access digital content. An accessible name serves as a label or
+          description for the section, allowing users to understand its purpose and content. Without this crucial
+          element, users may encounter confusion and difficulty navigating the webpage.</p>
+        <p>In web development, it is essential to ensure that all HTML elements have appropriate and meaningful
+          accessible names. This includes using ARIA (Accessible Rich Internet Applications) attributes when necessary
+          to provide additional context and descriptions for interactive elements. Failure to do so can lead to poor
+          user experiences and make websites less inclusive and accessible to a diverse range of users. Web developers
+          and designers should prioritize accessibility to create a more inclusive online environment for all.</p>
+      </section>
 
-
-    <section id="section2" aria-labelledby="heading1">
+      <section id="section2" aria-labelledby="heading1">
         <header>
-            <h2 id="heading1">This is a section with the accessible name</h2>
-            <div>08.10.2023     Author: Glasha Zhur</div>
+          <h2 id="heading1">This is a section with the accessible name</h2>
+          <div>08.10.2023 Author: Glasha Zhur</div>
         </header>
 
-        <p>A tag section with an accessible name is a crucial component of web accessibility. An accessible name provides users, especially those with disabilities who rely on screen readers or assistive technologies, with a clear understanding of the section's purpose and content. This descriptive label allows users to navigate and interact with the webpage effectively.
+        <p>A tag section with an accessible name is a crucial component of web accessibility. An accessible name
+          provides users, especially those with disabilities who rely on screen readers or assistive technologies, with
+          a clear understanding of the section's purpose and content. This descriptive label allows users to navigate
+          and interact with the webpage effectively.
         </p>
-        <p>In web development, ensuring that HTML elements have meaningful and relevant accessible names is fundamental. Developers can achieve this by utilizing proper semantic HTML tags and, when needed, incorporating ARIA (Accessible Rich Internet Applications) attributes to offer additional context and descriptions for interactive elements.
+        <p>In web development, ensuring that HTML elements have meaningful and relevant accessible names is fundamental.
+          Developers can achieve this by utilizing proper semantic HTML tags and, when needed, incorporating ARIA
+          (Accessible Rich Internet Applications) attributes to offer additional context and descriptions for
+          interactive elements.
         </p>
-        <p>By providing an accessible name for a tag section, web designers and developers contribute to a more inclusive and user-friendly online experience, making their websites accessible to a broader audience and demonstrating a commitment to web accessibility principles.
+        <p>By providing an accessible name for a tag section, web designers and developers contribute to a more
+          inclusive and user-friendly online experience, making their websites accessible to a broader audience and
+          demonstrating a commitment to web accessibility principles.
         </p>
 
         <footer>
-            <p>Article by Glafira Zhur, 2023</p>
-            <p><a href="#">Read more from Glafira Zhur</a>
-            </p>
+          <p>Article by Glafira Zhur, 2023</p>
+          <p><a href="#">Read more from Glafira Zhur</a>
+          </p>
         </footer>
-    </section>
+      </section>
     </div>
-   <div class="aside">
+    <div class="aside">
 
-   <aside class="advert" aria-label="advert banner">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/wb84vvYSPEU?si=5NpnZWZb1LTi2v_H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-       <br><br>
-       <iframe width="560" height="315"  aria-hidden="true" tabindex="-1" src="https://www.youtube.com/embed/7IFJQRlcNQ0?si=17__VNeo6gBGRj5o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </aside>
-    <aside>
+      <aside class="advert" aria-label="advert banner">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wb84vvYSPEU?si=5NpnZWZb1LTi2v_H"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+        <br><br>
+        <iframe width="560" height="315" aria-hidden="true" tabindex="-1"
+          src="https://www.youtube.com/embed/7IFJQRlcNQ0?si=17__VNeo6gBGRj5o" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </aside>
+      <aside>
         <form aria-label="Subscribe" action="sent.html">
-            <div>
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="example@example.com">
-            </div>
-            <button class="button-primary">Subscribe</button>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="example@example.com">
+          </div>
+          <button class="button-primary">Subscribe</button>
         </form>
-    </aside>
+      </aside>
 
+    </div>
+  </main>
 
-   </div>
-</main>
-
-<footer>
+  <footer>
     <div>
-    <nav aria-label="related links">
+      <nav aria-label="related links">
         <ul>
-            <li><a href="#">Related link 1</a></li>
-            <li><a href="#">Related link 2</a></li>
-            <li><a href="#">Related link 3</a></li>
+          <li><a href="#">Related link 1</a></li>
+          <li><a href="#">Related link 2</a></li>
+          <li><a href="#">Related link 3</a></li>
         </ul>
-    </nav>
-    <p>(c) Glafira Zhur, 2023</p>
+      </nav>
+      <p>(c) Glafira Zhur, 2023</p>
     </div>
 
     <form aria-labelledby="heading3" action="sent.html">
-        <h2 id="heading3">Subscription form</h2>
-        <div>
-            <label for="email2">E-mail</label>
-            <input type="email" id="email2" placeholder="example@example.com">
-        </div>
-        <button class="button-primary">Subscribe</button>
+      <h2 id="heading3">Subscription form</h2>
+      <div>
+        <label for="email2">E-mail</label>
+        <input type="email" id="email2" placeholder="example@example.com">
+      </div>
+      <button class="button-primary">Subscribe</button>
     </form>
 
-</footer>
+  </footer>
 
 </body>
+
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Лейблы для полей форм</title>
-    <style>
-        /*.button--info {
+  <meta charset="UTF-8">
+  <title>Лейблы для полей форм</title>
+  <style>
+    /*.button--info {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -13,50 +14,53 @@
             border-radius: 100%;
             background: #ccc;
         }*/
-        div {
-            margin-bottom: 20px;
-        }
-        input {
-            display: block;
-        }
+    div {
+      margin-bottom: 20px;
+    }
 
-    </style>
+    input {
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Лейблы для полей форм</h1>
-    <form action="/">
-        <div>
-            <label for="input1">Ваше имя (for):</label>
-            <input type="text" id="input1">
-            <!--span tabindex="0" aria-label="кнопка подсказки" class="button--info">i</span-->
-        </div>
+  <h1>Лейблы для полей форм</h1>
+  <form action="/">
+    <div>
+      <label for="input1">Ваше имя (for):</label>
+      <input type="text" id="input1">
+      <!--span tabindex="0" aria-label="кнопка подсказки" class="button--info">i</span-->
+    </div>
 
-        <div>
-            <div>
-                <label>Ваше имя (wrapped): 
-                    <input type="text">
-                </label>
-            </div>
-            <!-- TODO: найти этот пример, как он озвучивался в работах студентов -->
-            <p>*Если инпут лежит в лейбле, его не надо привязывать через for, это может вызвать ошибку чтения скринридера <a href="https://disk.yandex.com/i/VucMIJ5HSi3rpQ">скриншот</a></a></p>
-            <div>
-                <label for="input3">Ваше имя (wrapped + for): 
-                    <input type="text" id="input3">
-                </label>
-            </div>
-        </div>
+    <div>
+      <div>
+        <label>Ваше имя (wrapped):
+          <input type="text">
+        </label>
+      </div>
+      <!-- TODO: найти этот пример, как он озвучивался в работах студентов -->
+      <p>*Если инпут лежит в лейбле, его не надо привязывать через for, это может вызвать ошибку чтения скринридера <a
+          href="https://disk.yandex.com/i/VucMIJ5HSi3rpQ">скриншот</a></a></p>
+      <div>
+        <label for="input3">Ваше имя (wrapped + for):
+          <input type="text" id="input3">
+        </label>
+      </div>
+    </div>
 
-        <!-- TODO: добавить радио баттоны и чекбоксы - с ними прикольно -->
+    <!-- TODO: добавить радио баттоны и чекбоксы - с ними прикольно -->
 
-        <div>
-            <span>Ваше имя (span): </span>
-            <input type="text">
-        </div>
+    <div>
+      <span>Ваше имя (span): </span>
+      <input type="text">
+    </div>
 
-        <div>
-            <span id="input2">Ваше имя (span + aria-labelledby): </span>
-            <input aria-labelledby="input2" type="text">
-        </div>
-    </form>    
+    <div>
+      <span id="input2">Ваше имя (span + aria-labelledby): </span>
+      <input aria-labelledby="input2" type="text">
+    </div>
+  </form>
 </body>
+
 </html>

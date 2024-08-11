@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <title>А где кнопка?</title>
+  <meta charset="UTF-8">
+  <title>А где кнопка?</title>
 </head>
-    
-    <style>
-    
-        .button {
-            appearance: none;
-            display: block;
-            margin: 20px auto;
-            font-size: 30px;
-            padding: 20px 10px;
-            background-color: #061266;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            box-shadow: 4px 4px 7px rgba(0,0,0,0.2);
-            font-family: Arial;
-            font-weight: 400;
-            width: 500px;
-            box-sizing: border-box;
-            cursor: pointer;
-           
-        }
-        
-        .button:active {
-            box-shadow: 5px 5px 8px rgba(0,0,0,0.5);
-        }
-        h1 { text-align: center; }
-    </style>
+
+<style>
+  .button {
+    appearance: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 30px;
+    padding: 20px 10px;
+    background-color: #061266;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.2);
+    font-family: Arial;
+    font-weight: 400;
+    width: 500px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .button:active {
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    text-align: center;
+  }
+</style>
+
 <body>
 
-
-  
-<main id="main">
+  <main id="main">
     <h1>Много разных кнопок</h1>
-  
+
     <div class="div-button button">Заполнить заявление</div>
     <div class="role-button button" role="button" tabindex="0">Заполнить заявление</div>
     <button class="button-button button">Заполнить заявление</button>
     <a class="link-button button" href="#">Заполнить заявление</a>
     <input class="input-button button" type="button" value="Заполнить заявление">
-</main>
-  
-  <script>  
+  </main>
+
+  <script>
     const buttons = document.querySelectorAll(".button");
-    buttons.forEach((e)=>{
-      e.addEventListener("click",()=>{
+    buttons.forEach((e) => {
+      e.addEventListener("click", () => {
         alert("Вы нажали на эту кнопку, и сейчас откроется форма заявления!");
       });
     });
   </script>
 
 </body>
+
 </html>

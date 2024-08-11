@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>aria-hidden</title>
-    <style>
-        nav {
-            display: flex;
-        }
-    </style>
+  <title>aria-hidden</title>
+  <style>
+    nav {
+      display: flex;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>aria-hidden example</h1>
-<p>...but first <a href="https://dequeuniversity.com/mac/keyboard-access-mac" target="_blank"> enable keyboard navigation on Mac</a></p>
-<h2>Visible navigation</h2>
+  <h1>aria-hidden example</h1>
+  <p>...but first <a href="https://dequeuniversity.com/mac/keyboard-access-mac" target="_blank"> enable keyboard
+      navigation on Mac</a></p>
+  <h2>Visible navigation</h2>
 
-<nav>
+  <nav>
     <a href="#">Menu item 1</a>
     <a href="#">Menu item 2</a>
-</nav>
+  </nav>
 
-<h2>Hidden navigation, no tabindex prevention</h2>
-<nav aria-hidden="true">
+  <h2>Hidden navigation, no tabindex prevention</h2>
+  <nav aria-hidden="true">
     <a href="#" aria-hidden="false">Menu item 1</a>
     <a href="#" aria-hidden="false">Menu item 2</a>
-</nav>
+  </nav>
 
-<h2>Hidden navigation, tabindex="-1"</h2>
-<nav aria-hidden="true">            
+  <h2>Hidden navigation, tabindex="-1"</h2>
+  <nav aria-hidden="true">
     <a href="#" tabindex="-1">Menu item 1</a>
     <a href="#" tabindex="-1">Menu item 2</a>
-</nav>
+  </nav>
 
-<h2>Hidden navigation, inert attr</h2>
-<nav aria-hidden="true" inert>
+  <h2>Hidden navigation, inert attr</h2>
+  <nav aria-hidden="true" inert>
     <a href="#">Menu item 1</a>
     <a href="#">Menu item 2</a>
-</nav>
+  </nav>
 
-<h2>Hidden elements</h2>
+  <h2>Hidden elements</h2>
 
-<div tabindex="0" aria-hidden="true">
+  <div tabindex="0" aria-hidden="true">
     Focusable button
-</div>
-<br>
+  </div>
+  <br>
 
-<div>
-<button aria-hidden="true">Open modal (aria-hidden)</button>
-<button>Open modal</button>
-</div>
+  <div>
+    <button aria-hidden="true">Open modal (aria-hidden)</button>
+    <button>Open modal</button>
+  </div>
 
-<br>
+  <br>
 
-<div>
-<input type="number" aria-hidden="true" aria-label="Insert number" value="250" style="width: 70px">
-<input type="number" aria-label="Insert number" value="250" style="width: 70px">
-</div>
+  <div>
+    <input type="number" aria-hidden="true" aria-label="Insert number" value="250" style="width: 70px">
+    <input type="number" aria-label="Insert number" value="250" style="width: 70px">
+  </div>
 
-<br>
+  <br>
 
-<section aria-label="some ticking data" aria-hidden="true">
+  <section aria-label="some ticking data" aria-hidden="true">
     <p>Something went wrong with the data update</p>
     <button aria-hidden="false">Reload</button>
-</section>
-
+  </section>
 
 </body>
+
 </html>
