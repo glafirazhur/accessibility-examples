@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
 
   ['src/favicon.ico', 'src/opengraph.jpg'].forEach((item) => eleventyConfig.addPassthroughCopy(item));
+  eleventyConfig.addPassthroughCopy('assets/img');
 
   return {
     dir: {
