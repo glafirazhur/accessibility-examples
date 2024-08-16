@@ -16,8 +16,8 @@
 
         .close-button {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 10px;
+            right: 10px;
         }
 
         .modal {
@@ -25,6 +25,7 @@
             padding: 10px;
             border: 1px solid;
             margin: 20px;
+            max-width: 640px;
         }
 
         body {
@@ -70,6 +71,7 @@
             justify-content: center;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            margin: 1px;
         }
 
         .caption {
@@ -78,10 +80,24 @@
             margin-bottom: 10px;
         }
 
+        [aria-readonly="true"] {
+            color: #999;
+            background-color: #ccc;
+        }
+
+        [aria-selected="true"] {
+            background-color: aqua;
+        }
+
 
     </style>
 </head>
 <body>
+
+<!-- selected - multiselectable
+    disabled
+    current
+    -->
 
 <main>
     <h1>Date / Date range combobox pattern</h1>
@@ -105,7 +121,7 @@
                 </div>
                 <div class="calendar-wrapper">
                     <div id="gridLabel1ID" class="caption caption-first" aria-live="polite">July</div>
-                    <div class="calendar" aria-labelledby="gridLabel1ID" role="grid">
+                    <div class="calendar" aria-labelledby="gridLabel1ID" role="grid" aria-multiselectable="true">
                         <div class="grid-header" role="row">
                             <div role="columnheader">Sun</div>
                             <div role="columnheader">Mon</div>
@@ -119,7 +135,7 @@
                             <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
                             <div role="row">
                                 <div role="gridcell"></div>
-                                <div class="gridcell" role="gridcell" tabindex="0" aria-selected="true">1</div>
+                                <div class="gridcell" role="gridcell" tabindex="0" aria-selected="false">1</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">2</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">3</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">4</div>
@@ -127,11 +143,11 @@
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">6</div>
                             </div>
                             <div role="row">
-                                <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">7</div>
-                                <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">8</div>
-                                <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">9</div>
-                                <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">10</div>
-                                <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">11</div>
+                                <div class="gridcell" role="gridcell" tabindex="-1" aria-readonly="true">7</div>
+                                <div class="gridcell" role="gridcell" tabindex="-1" aria-readonly="true">8</div>
+                                <div class="gridcell" role="gridcell" tabindex="-1" aria-readonly="true">9</div>
+                                <div class="gridcell" role="gridcell" tabindex="-1" aria-readonly="true">10</div>
+                                <div class="gridcell" role="gridcell" tabindex="-1" aria-readonly="true">11</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">12</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">13</div>
                             </div>
@@ -170,7 +186,7 @@
                 <div class="calendar-wrapper">
 
                 <div id="gridLabel2ID" class="caption caption-second" aria-live="polite">August</div>
-                <div class="calendar" aria-labelledby="gridLabel2ID" role="grid">
+                <div class="calendar" aria-labelledby="gridLabel2ID" role="grid" aria-multiselectable="true">
                     <div class="grid-header" role="row">
                         <div role="columnheader">Sun</div>
                         <div role="columnheader">Mon</div>
@@ -262,7 +278,7 @@
                     <button>Prev</button>
                     <button>Next</button>
                 </div>
-                <table class="calendar" role="grid">
+                <table class="calendar" role="grid" aria-multiselectable="true">
                     <caption class="caption">July</caption>
                     <thead>
                         <tr>
@@ -279,7 +295,7 @@
                         <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
                         <tr>
                             <td></td>
-                            <td class="gridcell" tabindex="0" aria-selected="true">1</td>
+                            <td class="gridcell" tabindex="0" aria-selected="false">1</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">2</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">3</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">4</td>
@@ -288,11 +304,11 @@
                         </tr>
                         <tr>
                             <td class="gridcell" tabindex="-1" aria-selected="false">7</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">8</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">9</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">10</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">11</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">12</td>
+                            <td class="gridcell" tabindex="-1" aria-readonly="true">8</td>
+                            <td class="gridcell" tabindex="-1"  aria-readonly="true">9</td>
+                            <td class="gridcell" tabindex="-1" aria-readonly="true">10</td>
+                            <td class="gridcell" tabindex="-1" aria-readonly="true">11</td>
+                            <td class="gridcell" tabindex="-1" aria-readonly="true">12</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">13</td>
                         </tr>
                         <tr>
@@ -325,7 +341,7 @@
                     </tbody>
                 </table>
         
-                <table class="calendar" role="grid">
+                <table class="calendar" role="grid" aria-multiselectable="true">
                     <caption class="caption">August</caption>
                     <thead>
                         <tr>
@@ -453,6 +469,12 @@
                                 nextFocus -= 7;
                             }
                             break;
+                        case 'Enter': 
+                            if (!e.target.getAttribute('aria-readonly'))  {
+                                const isSelected = e.target.getAttribute('aria-selected');
+                                e.target.setAttribute('aria-selected', isSelected === "true"? "false": "true");
+                            }
+                            break;
                         default:
                             return; // exit this handler for other keys
                     }
@@ -462,9 +484,7 @@
 
                     // Update tabindex
                     cells[currentFocus].setAttribute('tabindex', '-1');
-                    cells[currentFocus].removeAttribute('aria-selected');
                     cells[nextFocus].setAttribute('tabindex', '0');
-                    cells[nextFocus].setAttribute('aria-selected', 'true');
                     currentFocus = nextFocus;
 
                     // Move focus to the new cell
