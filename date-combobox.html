@@ -88,8 +88,9 @@
         [aria-selected="true"] {
             background-color: aqua;
         }
-
-
+        [aria-current="date"] {
+            border: #000 solid;
+        }
     </style>
 </head>
 <body>
@@ -123,13 +124,34 @@
                     <div id="gridLabel1ID" class="caption caption-first" aria-live="polite">July</div>
                     <div class="calendar" aria-labelledby="gridLabel1ID" role="grid" aria-multiselectable="true">
                         <div class="grid-header" role="row">
-                            <div role="columnheader">Sun</div>
-                            <div role="columnheader">Mon</div>
-                            <div role="columnheader">Tue</div>
-                            <div role="columnheader">Wed</div>
-                            <div role="columnheader">Thu</div>
-                            <div role="columnheader">Fri</div>
-                            <div role="columnheader">Sat</div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Sunday</span>
+                                <span aria-hidden="true">Sun</span>
+                            </div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Monday</span>
+                                <span aria-hidden="true">Mon</span>
+                            </div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Tuesday</span>
+                                <span aria-hidden="true">Tue</span>
+                            </div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Wednesday</span>
+                                <span aria-hidden="true">Wed</span>
+                            </div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Thursday</span>
+                                <span aria-hidden="true">Thu</span>
+                            </div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Friday</span>
+                                <span aria-hidden="true">Fri</span>
+                            </div>
+                            <div role="columnheader">
+                                <span class="visually-hidden">Saturday</span>
+                                <span aria-hidden="true">Sat</span>
+                            </div>
                         </div>
                         <div class="grid-body">
                             <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
@@ -137,7 +159,10 @@
                                 <div role="gridcell"></div>
                                 <div class="gridcell" role="gridcell" tabindex="0" aria-selected="false">1</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">2</div>
-                                <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">3</div>
+                                <div class="gridcell" aria-current="date" role="gridcell" tabindex="-1" aria-selected="false">
+                                    <span class="visually-hidden">03/07/2024</span>
+                                    <span aria-hidden="true">3</span>
+                                </div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">4</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">5</div>
                                 <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">6</div>
@@ -188,13 +213,34 @@
                 <div id="gridLabel2ID" class="caption caption-second" aria-live="polite">August</div>
                 <div class="calendar" aria-labelledby="gridLabel2ID" role="grid" aria-multiselectable="true">
                     <div class="grid-header" role="row">
-                        <div role="columnheader">Sun</div>
-                        <div role="columnheader">Mon</div>
-                        <div role="columnheader">Tue</div>
-                        <div role="columnheader">Wed</div>
-                        <div role="columnheader">Thu</div>
-                        <div role="columnheader">Fri</div>
-                        <div role="columnheader">Sat</div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Sunday</span>
+                            <span aria-hidden="true">Sun</span>
+                        </div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Monday</span>
+                            <span aria-hidden="true">Mon</span>
+                        </div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Tuesday</span>
+                            <span aria-hidden="true">Tue</span>
+                        </div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Wednesday</span>
+                            <span aria-hidden="true">Wed</span>
+                        </div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Thursday</span>
+                            <span aria-hidden="true">Thu</span>
+                        </div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Friday</span>
+                            <span aria-hidden="true">Fri</span>
+                        </div>
+                        <div role="columnheader">
+                            <span class="visually-hidden">Saturday</span>
+                            <span aria-hidden="true">Sat</span>
+                        </div>
                     </div>
                     <div class="grid-body">
                         <!-- August 2024 starts on Thursday, ends on Saturday (31 days) -->
@@ -204,7 +250,10 @@
                             <div role="gridcell"></div>
                             <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">1</div>
                             <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">2</div>
-                            <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">3</div>
+                            <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">
+                                <span class="visually-hidden">03/08/2024</span>
+                                <span aria-hidden="true">3</span>
+                            </div>
                             <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">4</div>
                         </div>
                         <div role="row">
@@ -282,13 +331,34 @@
                     <caption class="caption">July</caption>
                     <thead>
                         <tr>
-                            <th>Sun</th>
-                            <th>Mon</th>
-                            <th>Tue</th>
-                            <th>Wed</th>
-                            <th>Thu</th>
-                            <th>Fri</th>
-                            <th>Sat</th>
+                            <th>
+                                <span class="visually-hidden">Sunday</span>
+                                <span aria-hidden="true">Sun</span>
+                            </th>
+                            <th>
+                                <span class="visually-hidden">Monday</span>
+                                <span aria-hidden="true">Mon</span>
+                            </th>
+                            <th>
+                                <span class="visually-hidden">Tuesday</span>
+                                <span aria-hidden="true">Tue</span>
+                            </th>
+                            <th>
+                                <span class="visually-hidden">Wednesday</span>
+                                <span aria-hidden="true">Wed</span>
+                            </th>
+                            <th>
+                                <span class="visually-hidden">Thursday</span>
+                                <span aria-hidden="true">Thu</span>
+                            </th>
+                            <th>
+                                <span class="visually-hidden">Friday</span>
+                                <span aria-hidden="true">Fri</span>
+                            </th>
+                            <th>
+                                <span class="visually-hidden">Saturday</span>
+                                <span aria-hidden="true">Sat</span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -297,7 +367,10 @@
                             <td></td>
                             <td class="gridcell" tabindex="0" aria-selected="false">1</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">2</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">3</td>
+                            <td class="gridcell" tabindex="-1" aria-selected="false" aria-current="date">
+                                <span class="visually-hidden">03/07/2024</span>
+                                <span aria-hidden="true">3</span>
+                            </td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">4</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">5</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">6</td>
@@ -362,7 +435,10 @@
                             <td></td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">1</td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">2</td>
-                            <td class="gridcell" tabindex="-1" aria-selected="false">3</td>
+                            <td class="gridcell" tabindex="-1" aria-selected="false">
+                                <span class="visually-hidden">03/08/2024</span>
+                                <span aria-hidden="true">3</span>
+                            </td>
                             <td class="gridcell" tabindex="-1" aria-selected="false">4</td>
                         </tr>
                         <tr>
