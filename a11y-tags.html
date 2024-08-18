@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chips A11y</title>
+
+  <style>
+  .tag-wrapper {
+display: flex;
+gap: 20px;
+  }
+
+.tag {
+display: flex;
+}
+      ul {list-style: none; display: flex; margin: 0; padding: 0; gap: 20px;}
+
+      .invalid {
+          border: 2px solid red;
+      }
+</style>
+</head>
+<body>
+    
+
+    <h1>Accessible chips (tags) input</h1>
+    
+    <h2>Editable tags</h2>
+    <div class="label" id="tag_label1">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+    
+        <div class="tag" id="tag1">
+            <button aria-describedby="tag_description">vk</button>
+            <button aria-label="Remove vk tag"  title="Remove vk tag">X</button>
+        </div>
+        <div class="tag" id="tag2">
+            <button aria-describedby="tag_description">facebook</button>
+            <button aria-label="Remove facebook tag"  title="Remove facebook tag">X</button>
+        </div>
+        
+        <input type="text" class="tag-input" aria-labelledby="tag_label1">   
+    </div>
+        
+    <h2>Uneditable tags</h2>
+    <div class="label" id="tag_label2">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+        
+        <div class="tag" id="tag3">
+            <div>vk</div>
+            <button aria-label="Remove vk tag" title="Remove vk tag">X</button>
+        </div>
+        <div class="tag" id="tag4">
+            <div>facebook</div>
+            <button aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+        </div>
+        
+        <input type="text" class="tag-input" aria-labelledby="tag_label2">      
+    </div>
+
+    <h2>List of tags, input instructions (don't add for the comboboxes!)</h2>
+    <div class="label" id="tag_label3">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" class="tag-wrapper" tabindex="0">
+        <ul>
+            <li class="tag" id="tag5">
+                <div>vk</div>
+                <button aria-label="Remove vk tag" title="Remove vk tag">X</button>
+            </li>
+            <li class="tag" id="tag6">
+                <div>facebook</div>
+                <button aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+            </li>
+        </ul>
+    
+        <input type="text" class="tag-input" aria-labelledby="tag_label3" aria-describedby="tag_instructions">
+        <div id="tag_instructions" hidden>Press Enter to add an item</div>
+    </div>
+
+    <h2>Disabled</h2>
+    <div class="label" id="tag_label4">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" aria-disabled="true" class="tag-wrapper" tabindex="0">
+         <div class="tag" id="tag7">
+            <div>vk</div>
+        </div>
+        <div class="tag" id="tag8">
+            <div>facebook</div>
+        </div>
+
+        <input type="text" disabled class="tag-input" aria-labelledby="tag_label4">
+    </div>
+
+    <h2>Invalid</h2>
+    <div class="label" id="tag_label5">Social media</div>
+    <div role="group" aria-label="Social media, 2 selected" aria-invalid="true" class="tag-wrapper invalid" tabindex="0">
+        
+        <div class="tag invalid" id="tag9">
+            <button aria-describedby="tag_invalid tag_description">vk</button>
+            <button aria-label="Remove vk tag" title="Remove vk tag">X</button>
+        </div>
+        <div class="tag" id="tag10">
+            <button aria-describedby="tag_description">facebook</button>
+            <button aria-label="Remove facebook tag" title="Remove facebook tag">X</button>
+        </div>
+
+        <input type="text" class="tag-input" aria-labelledby="tag_label5">
+    </div>
+
+    <div hidden id="tag_description">press Enter to edit</div>
+    <div hidden id="tag_invalid">invalid entry</div>
+</body>
+</html>
+
