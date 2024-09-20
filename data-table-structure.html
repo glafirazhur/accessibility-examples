@@ -5,10 +5,21 @@
     <title>Date picker combobox example</title>
 
     <style>
-   
-      
 
-    </style>
+       /* [role="row"] {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            border: 1px solid #ccc;
+        }
+
+        .header [role="columnheader"] {
+            background-color: #ccc;
+            font-weight: 400;
+        }
+*/
+
+        
+        </style>
 </head>
 <body>
     
@@ -36,6 +47,16 @@
             <td>Это описание товара 2</td>
         </tr>
         <tr>
+            <th>Тип</th>
+            <th>Детали</th>
+            <th>Детали</th>
+        </tr>
+        <tr>
+            <td>Услуга</td>
+            <td>Услуга 1</td>
+            <td>Это описание услуги 1</td>
+        </tr>
+        <tr>
             <td>Услуга</td>
             <td>Услуга 1</td>
             <td>Это описание услуги 1</td>
@@ -45,7 +66,7 @@
 
 
 <div role="table" aria-label="Описание продуктов и услуг">
-
+    <div role="rowgroup" class="header">
         <div role="row">
             <div role="columnheader" aria-rowspan="2">Тип</div>
             <div role="columnheader" aria-colspan="2">Детали</div>
@@ -54,7 +75,7 @@
             <div role="columnheader">Название</div>
             <div role="columnheader">Описание</div>
         </div>
-
+    </div>
 
         <div role="row">
             <div role="cell" aria-rowspan="2">Продукт</div>
@@ -72,6 +93,8 @@
         </div>
 
 </div>
+
+
 
 </body>
 </html>
