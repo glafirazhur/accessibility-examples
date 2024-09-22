@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Date picker combobox example</title>
+  <style>
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .modal {
+      position: relative;
+      padding: 10px;
+      border: 1px solid;
+      margin: 20px;
+    }
+
+    body {
+      margin: 20px;
+    }
+
+    .calendar-container {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      padding-top: 50px;
+    }
+
+    .calendar-buttons {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .calendar {
+      display: inline-block;
+      width: 300px;
+    }
+
+    [role="columnheader"] {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    tr,
+    [role="row"] {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    td,
+    [role="gridcell"] {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .caption {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <h1>Date / Date range combobox pattern</h1>
+    <section>
+      <h2>Single date</h2>
+      <div class="datepicker-trigger">
+        <label for="singleDateFiedlID">Single date picker</label>
+        <input type="text" placeholder="DD/MM/YYYY" id="singleDateFiedlID" aria-describedby="fieldDescription1ID"
+          role="combobox" aria-haspopup="dialog" aria-expanded="true" aria-controls="comboboxPopup1ID">
+        <span hidden id="fieldDescription1ID">Date format is DD/MM/YYYY</span>
+      </div>
+      <div class="modal" aria-label="Date picker" role="dialog" id="comboboxPopup1ID">
+        <button class="close-button" aria-label="close">x</button>
+
+        <h3>div[role="grid"] semantics</h3>
+
+        <div class="calendar-container">
+          <div class="calendar-buttons">
+            <button class="prev-button">Prev</button>
+            <button class="next-button">Next</button>
+          </div>
+          <div class="calendar-wrapper">
+            <div id="gridLabel1ID" class="caption caption-first" aria-live="polite">July</div>
+            <div class="calendar" aria-labelledby="gridLabel1ID" role="grid">
+              <div class="grid-header" role="row">
+                <div role="columnheader">Sun</div>
+                <div role="columnheader">Mon</div>
+                <div role="columnheader">Tue</div>
+                <div role="columnheader">Wed</div>
+                <div role="columnheader">Thu</div>
+                <div role="columnheader">Fri</div>
+                <div role="columnheader">Sat</div>
+              </div>
+              <div class="grid-body">
+                <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
+                <div role="row">
+                  <div role="gridcell"></div>
+                  <div class="gridcell" role="gridcell" tabindex="0" aria-selected="true">1</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">2</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">3</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">4</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">5</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">6</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">7</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">8</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">9</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">10</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">11</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">12</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">13</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">14</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">15</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">16</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">17</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">18</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">19</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">20</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">21</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">22</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">23</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">24</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">25</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">26</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">27</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">28</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">29</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">30</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">31</div>
+                  <div role="gridcell"></div>
+                  <div role="gridcell"></div>
+                  <div role="gridcell"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="calendar-wrapper">
+
+            <div id="gridLabel2ID" class="caption caption-second" aria-live="polite">August</div>
+            <div class="calendar" aria-labelledby="gridLabel2ID" role="grid">
+              <div class="grid-header" role="row">
+                <div role="columnheader">Sun</div>
+                <div role="columnheader">Mon</div>
+                <div role="columnheader">Tue</div>
+                <div role="columnheader">Wed</div>
+                <div role="columnheader">Thu</div>
+                <div role="columnheader">Fri</div>
+                <div role="columnheader">Sat</div>
+              </div>
+              <div class="grid-body">
+                <!-- August 2024 starts on Thursday, ends on Saturday (31 days) -->
+                <div role="row">
+                  <div role="gridcell"></div>
+                  <div role="gridcell"></div>
+                  <div role="gridcell"></div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">1</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">2</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">3</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">4</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">5</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">6</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">7</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">8</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">9</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">10</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">11</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">12</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">13</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">14</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">15</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">16</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">17</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">18</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">19</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">20</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">21</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">22</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">23</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">24</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">25</div>
+                </div>
+                <div role="row">
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">26</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">27</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">28</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">29</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">30</div>
+                  <div class="gridcell" role="gridcell" tabindex="-1" aria-selected="false">31</div>
+                  <div role="gridcell"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- span class="calendar-notification">July - August</span -->
+        </div>
+        <br>
+        <br>
+        <button>Apply</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Date range</h2>
+      <div class="comomox-wrapper">
+
+        <div role="group" aria-labelledby="groupLabelID">
+          <span id="groupLabelID" aria-hidden="true">Date range picker</span>
+
+          <input type="text" placeholder="DD/MM/YYYY" aria-label="From" aria-describedby="fieldDescription2ID"
+            role="combobox" aria-haspopup="dialog" aria-expanded="true" aria-controls="comboboxPopup2ID">
+          <input type="text" placeholder="DD/MM/YYYY" aria-label="To" aria-describedby="fieldDescription2ID"
+            role="combobox" aria-expanded="false" aria-haspopup="dialog">
+
+          <span hidden id="fieldDescription2ID">Date format is DD/MM/YYYY</span>
+
+        </div>
+      </div>
+      <div class="modal" aria-label="Date picker" role="dialog" id="comboboxPopup2ID">
+        <button class="close-button" aria-label="close">x</button>
+        <h3>&lt;table&gt; semantics</h3>
+        <div class="calendar-container">
+          <div class="calendar-buttons">
+            <button>Prev</button>
+            <button>Next</button>
+          </div>
+          <table class="calendar" role="grid">
+            <caption class="caption">July</caption>
+            <thead>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- July 2024 starts on Monday, ends on Wednesday (31 days) -->
+              <tr>
+                <td></td>
+                <td class="gridcell" tabindex="0" aria-selected="true">1</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">2</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">3</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">4</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">5</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">6</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">7</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">8</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">9</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">10</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">11</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">12</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">13</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">14</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">15</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">16</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">17</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">18</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">19</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">20</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">21</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">22</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">23</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">24</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">25</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">26</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">27</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">28</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">29</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">30</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="calendar" role="grid">
+            <caption class="caption">August</caption>
+            <thead>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- August 2024 starts on Thursday, ends on Saturday (31 days) -->
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">1</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">2</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">3</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">4</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">5</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">6</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">7</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">8</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">9</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">10</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">11</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">12</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">13</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">14</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">15</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">16</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">17</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">18</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">19</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">20</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">21</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">22</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">23</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">24</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">25</td>
+              </tr>
+              <tr>
+                <td class="gridcell" tabindex="-1" aria-selected="false">26</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">27</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">28</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">29</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">30</td>
+                <td class="gridcell" tabindex="-1" aria-selected="false">31</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <button>Apply</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const prevButton = document.querySelector('.prev-button');
+      const nextButton = document.querySelector('.next-button');
+      //const calendarNotification = document.querySelector('.calendar-notification');
+      const month1 = document.querySelector('.caption-first');
+      const month2 = document.querySelector('.caption-second');
+
+
+      prevButton.addEventListener('click', () => {
+        // calendarNotification.innerHTML = "May - June";
+        month1.innerHTML = "May";
+        month2.innerHTML = "June";
+      });
+
+      nextButton.addEventListener('click', () => {
+        //calendarNotification.innerHTML = "September - October";
+        month1.innerHTML = "September";
+        month2.innerHTML = "October";
+      });
+
+      const calendarContainers = document.querySelectorAll('.calendar-container');
+
+      calendarContainers.forEach(container => {
+        const cells = container.querySelectorAll('.gridcell');
+        let currentFocus = 0;
+
+        // Initialize focus on the first cell of each calendar container
+        if (cells.length > 0) {
+          cells[currentFocus].focus();
+        }
+
+        cells.forEach((cell, index) => {
+          cell.addEventListener('keydown', (e) => {
+            let nextFocus = currentFocus;
+
+            switch (e.key) {
+              case 'ArrowRight':
+                if (currentFocus < cells.length - 1) {
+                  nextFocus++;
+                }
+                break;
+              case 'ArrowLeft':
+                if (currentFocus > 0) {
+                  nextFocus--;
+                }
+                break;
+              case 'ArrowDown':
+                if (currentFocus + 7 < cells.length) {
+                  nextFocus += 7;
+                }
+                break;
+              case 'ArrowUp':
+                if (currentFocus - 7 >= 0) {
+                  nextFocus -= 7;
+                }
+                break;
+              default:
+                return; // exit this handler for other keys
+            }
+
+            // Prevent default scroll behavior
+            e.preventDefault();
+
+            // Update tabindex
+            cells[currentFocus].setAttribute('tabindex', '-1');
+            cells[currentFocus].removeAttribute('aria-selected');
+            cells[nextFocus].setAttribute('tabindex', '0');
+            cells[nextFocus].setAttribute('aria-selected', 'true');
+            currentFocus = nextFocus;
+
+            // Move focus to the new cell
+            cells[currentFocus].focus();
+          });
+        });
+      });
+    });
+
+  </script>
+</body>
+
+</html>

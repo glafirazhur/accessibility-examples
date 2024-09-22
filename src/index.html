@@ -1,0 +1,16 @@
+<script>
+  // Redirect your homepage to the first page of documentation.
+  // If you have a landing page, remove this script and add it here!
+  var supportedLanguages = { ru: "ru", en: "en" };
+  var fallbackLanguage = "en";
+
+  // Check if the users browser language is a supported language of the website. Otherwise go to fallback.
+  var language = supportedLanguages[(navigator.language || navigator.userLanguage).substring(0, 2)] || fallbackLanguage;
+
+  // Go to the language version of your website. Example: https://domain.com/en/
+  // location.replace("/" + language + "/");
+
+
+  // window.location.pathname = `/en/`;
+  window.location.pathname = ("/" + language);
+</script>

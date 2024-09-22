@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>toggle button</title>
+  <style>
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Кнопка с двумя состояниями</h1>
+
+  <h2>Тогл-баттон (aria-pressed)</h2>
+  <button class="toggle-button" aria-pressed="false">AM</button>
+
+  <h2>Тогл-баттон (aria-pressed) с уведомлением</h2>
+  <button class="toggle-status-button" aria-pressed="false">AM</button>
+  <span class="notification visually-hidden" role="status"></span>
+
+  <h2>Кнопка-свитч</h2>
+  <button class="switch-button" role="switch" aria-checked="false">Yes</button>
+
+  <h2>Изменяется только текст в кнопке</h2>
+  <button class="change-button">Show</button>
+
+  <script>
+
+    const toggleButton = document.querySelector(".toggle-button");
+    const toggleStatusButton = document.querySelector(".toggle-status-button");
+    const changeButton = document.querySelector(".change-button");
+    const switchButton = document.querySelector(".switch-button");
+
+    toggleButton.addEventListener("click", (e) => {
+      let buttonText = e.target.innerHTML === "AM" ? "PM" : "AM";
+      let attrValue = e.target.getAttribute("aria-pressed") === "true" ? "false" : "true";
+      e.target.innerHTML = buttonText;
+      e.target.setAttribute('aria-pressed', attrValue);
+    });
+
+    toggleStatusButton.addEventListener("click", (e) => {
+      const statusMessage = document.querySelector(".notification");
+      let buttonText = e.target.innerHTML === "AM" ? "PM" : "AM";
+      let attrValue = e.target.getAttribute("aria-pressed") === "true" ? "false" : "true";
+      e.target.innerHTML = buttonText;
+      e.target.setAttribute('aria-pressed', attrValue);
+      statusMessage.innerHTML = `Time period is changed to ${buttonText}`;
+    });
+
+    changeButton.addEventListener("click", (e) => {
+      let buttonText = e.target.innerHTML === "Show" ? "Hide" : "Show";
+      e.target.innerHTML = buttonText;
+    });
+
+    switchButton.addEventListener("click", (e) => {
+      let buttonText = e.target.innerHTML === "Yes" ? "No" : "Yes";
+      let attrValue = e.target.getAttribute("aria-checked") === "true" ? "false" : "true";
+      e.target.innerHTML = buttonText;
+      e.target.setAttribute('aria-checked', attrValue);
+    });
+
+  </script>
+
+</body>
+
+</html>
